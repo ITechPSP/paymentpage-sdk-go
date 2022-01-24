@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.com/ITechPSP/paymentpage-sdk-go.svg?branch=main)](https://travis-ci.com/ITechPSP/paymentpage-sdk-go)
+[![Build Status](https://travis-ci.com/trxhosts/paymentpage-sdk-go.svg?branch=main)](https://travis-ci.com/trxhosts/paymentpage-sdk-go)
 
-# ITechPSP payment page SDK
+# TrxHosts payment page SDK
 
 This is a set of libraries in the Go language to ease integration of your service
-with the ITechPSP Payment Page.
+with the TrxHosts Payment Page.
 
 ## Payment flow
 
@@ -13,16 +13,16 @@ with the ITechPSP Payment Page.
 
 Simply use go get:
 
-`go get github.com/ITechPSP/paymentpage-sdk-go`
+`go get github.com/trxhosts/paymentpage-sdk-go`
 
 To update later:
 
-`go get -u github.com/ITechPSP/paymentpage-sdk-go`
+`go get -u github.com/trxhosts/paymentpage-sdk-go`
 
 ### Get URL for payment
 
 ```go
-import "github.com/ITechPSP/paymentpage-sdk-go"
+import "github.com/trxhosts/paymentpage-sdk-go"
 
 payment := paymentpage.NewPayment(11, "test_payment_id")
 payment.SetParam(paymentpage.ParamPaymentCurrency, "EUR")
@@ -34,12 +34,12 @@ paymentPageUrl := gate.GetPaymentPageUrl(*payment)
 
 `paymentPageUrl` here is the signed URL.
 
-### Handle callback from ITechPSP
+### Handle callback from TrxHosts
 
 You'll need to autoload this code in order to handle notifications:
 
 ```go
-import "github.com/ITechPSP/paymentpage-sdk-go"
+import "github.com/trxhosts/paymentpage-sdk-go"
 
 gate := paymentpage.NewGate("your project secret")
 callback, err := gate.HandleCallback(data)
